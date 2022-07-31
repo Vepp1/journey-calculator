@@ -1,3 +1,16 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+def get_distance():
+    """
+    First function to be loaded. 
+    Contains an explanation of how the application works and
+    get the total distance input from the user.
+    Run a while loop to check the validity of data.
+    """
+
+    while True:
+        print("Welcome to Trip Calculator!")
+        print("Calculate your trip expenses and check what transportation suits your better.\n")
+        
+        distance = input("Please, enter the trip distance here:\n")
+        print(distance)
+
+get_distance()
