@@ -61,5 +61,22 @@ def validate_data_letters(data):
 
     return True
 
+def get_ticket_price():
+    """
+    This function get the total ticket(s) price from the
+    users input.
+    """
+    while True:
+        ticket = input("Inform the ticket(s) total price (Ex: 1000):\n")
+
+        if validate_data_numbers(ticket):
+            print("Data is valid!\n")
+            break
+
+    return int(ticket)
+
+
+
+
 
 
