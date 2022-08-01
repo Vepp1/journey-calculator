@@ -1,37 +1,39 @@
 def get_distance():
     """
-    First function to be loaded. 
-    Contains an explanation of how the application works and
-    get the total distance input from the user.
-    Run a while loop to check the validity of data.
+    Function to get the total journeys distance. It runs a while loop
+    until the input is valid.
     """
 
     while True:
-        print("Welcome to Trip Calculator!")
-        print("Calculate your trip expenses and check what transportation suits your better.\n")
-        
         distance = input("Please, enter the trip distance in km here (Ex: 1000):\n")
 
         if validate_data_numbers(distance):
             print("Data is valid!\n")
             break
+    return int(distance)
 
+    
+    
+def trip_info():
+    """
+    Function to determine if its a a round or one way trip.
+    In case it is around, the total distance and prices wil be doubled
+    on the main function.
+    """
     while True:
         type = input("Is this a round tripe? (Ex: Y or N):\n")
 
         if validate_data_letters(type):
             print("Data is valid!\n")
             break
-    
-    if type == "Y":
-        new_distance = int(distance) * 2
-        print(new_distance)
-    else:
-        print(distance)
+    return type
 
 
 
 def validate_data_numbers(data):
+    """
+    Validates the numbers input provided by the user.
+    """
     try:
         if data.isnumeric():
             return True
@@ -40,22 +42,24 @@ def validate_data_numbers(data):
                 f"A valid number is required, you provided {data}"
                 )
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again.")
+        print(f"Invalid data: {e}, please try again.\n")
         return False
 
 
 def validate_data_letters(data):
+    """
+    Validates the Y/N inputs provided by the user
+    """
     try:
         if data != "Y" and data != "N":
             raise ValueError(
                 f"A Y or N input is required, you provided {data}"
                 )
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again.")
+        print(f"Invalid data: {e}, please try again.\n")
         return False
 
     return True
 
-get_distance()
 
 
