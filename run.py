@@ -75,6 +75,30 @@ def get_ticket_price():
 
     return int(ticket)
 
+def main():
+    """
+    This function runs all the other functions to give the 
+    final result.
+    """
+
+    print("Welcome to Trip Calculator!")
+    print("Calculate your trip expenses and check what transportation suits you better.\n")
+    distance = get_distance()
+    trip = trip_info()
+
+    price = get_ticket_price()
+    
+
+    if trip == "Y":
+        distance *= 2
+        print(distance)
+        price *= 2
+        print(price)
+    else:
+        print(distance)
+
+main()
+
 
 
 
