@@ -103,6 +103,19 @@ def get_gas_price():
             break
     return float(gas)
 
+def calculate(dist, pr, mg, gs):
+    
+    car_price = round((dist / mg) * gs, 2)
+
+    if car_price > pr:
+        print("A car is not the best option for this trip.\n")
+        print(f"For a {dist}km journey, you will expend {car_price} Euro taking a car. While with other transportations, the price is {pr}.")
+    elif car_price < pr:
+        print("A car is the best option for this trip.\n")
+        print(f"For a {dist}km journey, you will expend {car_price} Euro taking a car. While with other transportations, the price is {pr}.")
+    else:
+        print("With both options the expenses are the same!")
+
 def main():
     """
     This function runs all the other functions to give the 
@@ -119,12 +132,9 @@ def main():
 
     if trip == "Y":
         distance *= 2
-        print(distance)
         price *= 2
-        print(price)
-    else:
-        print(distance)
-        print(price)
+
+    final_calcule = calculate(distance, price, mileage, gas)
 
 main()
 
