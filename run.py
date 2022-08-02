@@ -35,7 +35,7 @@ def validate_data_numbers(data):
     Validates the numbers input provided by the user.
     """
     try:
-        if data.isnumeric():
+        if data.isnumeric() or float(data):
             return True
         else:
             raise ValueError(
@@ -75,6 +75,34 @@ def get_ticket_price():
 
     return int(ticket)
 
+def get_car_mileage():
+    """
+    Collects the data about how many km the car drives
+    with one liter of gasoline.
+    """
+
+    while True:
+        mileage = input("Please, inform how many km your car drives with 1 liter of gasoline. Normal cars drive aroun 12.5-15 km/l in average. (Ex: 15)\n")
+
+        if validate_data_numbers(mileage):
+            print("Data is valid!\n")
+            break
+    return int(mileage)
+
+def get_gas_price():
+    """
+    The function get_gas_price, collects the actual gasolines price from
+    users input.
+    """
+
+    while True:
+        gas = input("Insert the actual gasoline price (Ex 2.50):\n")
+
+        if validate_data_numbers(gas):
+            print("Data is valid!\n")
+            break
+    return float(gas)
+
 def main():
     """
     This function runs all the other functions to give the 
@@ -85,9 +113,9 @@ def main():
     print("Calculate your trip expenses and check what transportation suits you better.\n")
     distance = get_distance()
     trip = trip_info()
-
     price = get_ticket_price()
-    
+    mileage = get_car_mileage()
+    gas = get_gas_price()
 
     if trip == "Y":
         distance *= 2
@@ -96,6 +124,7 @@ def main():
         print(price)
     else:
         print(distance)
+        print(price)
 
 main()
 
