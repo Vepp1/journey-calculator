@@ -104,7 +104,10 @@ def get_gas_price():
     return float(gas)
 
 def calculate(dist, pr, mg, gs):
-    
+    """
+    Function to gather all data and make the final calculation,
+    to check with transportation it is cheaper for the user
+    """    
     car_price = round((dist / mg) * gs, 2)
 
     if car_price > pr:
