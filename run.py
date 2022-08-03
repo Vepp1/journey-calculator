@@ -21,7 +21,7 @@ def trip_info():
     on the main function.
     """
     while True:
-        type = input("Is this a round tripe? (Ex: Y or N):\n")
+        type = input("Is this a round tripe? (Ex: Y or N):\n").upper()
 
         if validate_data_letters(type):
             print("Data is valid!\n")
