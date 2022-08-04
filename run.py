@@ -7,7 +7,7 @@ def get_distance():
     while True:
         distance = input("Please, enter the trip distance in km here (Ex: 1000):\n")
 
-        if validate_data_numbers(distance):
+        if validate_distance(distance):
             print("Data is valid!\n")
             break
     return int(distance)
@@ -30,36 +30,32 @@ def trip_info():
 
 
 
-def validate_data_numbers(data):
+def validate_distance(data):
     """
     Validates the numbers input provided by the user.
     """
-    try:
-        if data.isnumeric() or float(data):
-            return True
-        else:
-            raise ValueError(
-                f"A valid number is required, you provided {data}"
-                )
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+    if data.isnumeric():
+        return True
+    elif not data:
+        print(f"Invalid data: A valid number is required, you provided an empty value, please try again.\n")
         return False
+    else:
+        print(f"Invalid data: A valid number is required, you provided {data}, please try again.\n")
 
 
 def validate_data_letters(data):
     """
     Validates the Y/N inputs provided by the user
     """
-    try:
-        if data != "Y" and data != "N":
-            raise ValueError(
-                f"A Y or N input is required, you provided {data}"
-                )
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+    if not data:
+        print(f"Invalid data: A valid number is required, you provided an empty value, please try again.\n")
         return False
+    elif data != "Y" and data != "N":
+        print(f"Invalid data: A Y or N input is required, you provided {data}, please try again. \n")
+        return False
+    else:
+        return True
 
-    return True
 
 def get_ticket_price():
     """
