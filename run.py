@@ -136,7 +136,8 @@ def main():
 
     final_calcule = calculate(distance, price, mileage, gas)
 
-main()
+if __name__ == '__main__':
+    sys.exit(main())
 
 
 
