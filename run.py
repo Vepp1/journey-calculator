@@ -1,3 +1,5 @@
+import sys
+
 def get_distance():
     """
     Function to get the total journeys distance. It runs a while loop
@@ -100,21 +102,28 @@ def get_gas_price():
             break
     return float(gas)
 
-def calculate(dist, pr, mg, gs):
+class TripCalculator():
     """
-    Function to gather all data and make the final calculation,
+    Class to gather all data and make the final calculation,
     to check with transportation it is cheaper for the user
-    """    
-    car_price = round((dist / mg) * gs, 2)
+    """  
+    def __init__(self, distance, ticket, mileage, gas):
+        self.distance = distance
+        self.ticket = ticket
+        self.mileage = mileage
+        self.gas = gas
 
-    if car_price > pr:
-        print("A car is not the best option for this trip.\n")
-        print(f"For a {dist}km journey, you will expend {car_price} Euro taking a car. While with other transportations, the price is {pr}.")
-    elif car_price < pr:
-        print("A car is the best option for this trip.\n")
-        print(f"For a {dist}km journey, you will expend {car_price} Euro taking a car. While with other transportations, the price is {pr}.")
-    else:
-        print("With both options the expenses are the same!")
+    def calculate(self):
+        car_price = round((self.distance / self.mileage) * self.gas, 2)
+
+        if car_price > self.ticket:
+            print("A car is not the best option for this trip.\n")
+            print(f"For a {self.distance}km journey, you will expend {car_price} Euro taking a car. While with other transportations, the price is {self.ticket}.")
+        elif car_price < self.ticket:
+            print("A car is the best option for this trip.\n")
+            print(f"For a {self.distance}km journey, you will expend {car_price} Euro taking a car. While with other transportations, the price is {self.ticket}.")
+        else:
+            print("With both options the expenses are the same!")
 
 def main():
     """
@@ -126,17 +135,18 @@ def main():
     print("Calculate your trip expenses and check what transportation suits you better.\n")
     distance = get_distance()
     trip = trip_info()
-    price = get_ticket_price()
+    ticket = get_ticket_price()
     mileage = get_car_mileage()
     gas = get_gas_price()
 
     if trip == "Y":
         distance *= 2
-        price *= 2
+        ticket *= 2
 
-    final_calcule = calculate(distance, price, mileage, gas)
+    result = TripCalculator(distance, ticket, mileage, gas)
+    print(result.calculate())
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sys.exit(main())
 
 
