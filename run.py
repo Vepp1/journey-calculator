@@ -118,7 +118,7 @@ class TripCalculator():
 
         if car_price > self.ticket:
             print("A car is not the best option for this trip.\n")
-            print(f"For a {self.distance}km journey, you will expend {car_price} Euro taking a car. While with other transportations, the price is {self.ticket}.")
+            print(f"For a {self.distance}km journey, you will expend {car_price} Euro taking a car. While with other transportations, the price is {self.ticket}.\n")
         elif car_price < self.ticket:
             print("A car is the best option for this trip.\n")
             print(f"For a {self.distance}km journey, you will expend {car_price} Euro taking a car. While with other transportations, the price is {self.ticket}.")
@@ -144,7 +144,7 @@ def main():
         ticket *= 2
 
     result = TripCalculator(distance, ticket, mileage, gas)
-    print(result.calculate())
+    result.calculate()
 
 if __name__ == "__main__":
     sys.exit(main())
