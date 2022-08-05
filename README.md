@@ -1,31 +1,84 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# __Trip Calculator__
 
-Welcome Vepp1,
+Trip Calculator is an application built to allow users calculate the expenses of traveling by car or other ways.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+Users must insert data such as total travel distance, how much they would spend on tickets, car comsuption and gas price. With data the app will return which option is cheaper.
 
-## Reminders
+![Desktop View](assets/images/mockup.jpeg)
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+----
 
-## Creating the Heroku app
+## __How to use it__
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+First of all the user needs to insert the total traveling distance. After that, they will be asked if it is a roundway trip. If the user answers yes, the traveling distance and prices will be automatically doubled. Then, the user is asked for the ticket price, how much would they spend with planes, trains, busses tickets or so. The user now has to inform his car fuel comsuption and the fuel price. With all that information, the app will give a result of how much would you spend with both kind of transportation.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## __Features__
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+### __Existing Features__
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+- __Game Menu__
 
-Connect your GitHub repository and deploy as normal.
+    - The section game menu is the one the user arrives when accessing the website. This page contains 2 buttons, one to start playing and another one containing the instructions. 
 
-## Constraints
+    ![Navigation Bar](assets/images/game_menu.png)
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+- __Instructions__
 
------
-Happy coding!
+  - The instructions button pops up a modal, that teaches the player how to play the game.
+ 
+
+  ![Landing Page](assets/images/instructions.png)
+
+- __Input Area__
+
+    - The app collects 5 different inputs from the user:
+        - Total distance
+        - Roundway or one way trip
+        - Tickets price
+        - Fuel comsuptiom
+        - Fuel price 
+
+    ![Navigation Bar](assets/images/gaming_area.png)
+
+- __Input Validator__
+
+    - There are validator built within the app that will validate the users input and returns a message in case of a non-accepted input. 
+
+    ![Navigation Bar](assets/images/score.png)
+
+- __TripCalculator Class__
+
+    - A class was built to execute the final calculation of the app. In this way the application can be easily accesed in future projects. 
+
+    ![Navigation Bar](assets/images/result.png)
+
+----
+
+## __Data Model__
+
+On this application, everything happens inside the main block. All the inputs, inserted by the user. are stored into variable inside the Main function.
+
+A class was built to handle the final calcule that is made on the application.
+
+----
+
+  ## __Testing__
+
+The website was manually tested, in the following way:
+- Code passed through a PEP8 linter and confirmed no problems
+- Invalid inputs: strings where numbers are required, empty values, space inputs
+- Tested in local and Code Institute Heroku terminal.
+----
+
+## __Deployment__
+
+This project was deployed using Code Institute's mock terminal for Heroku.
+
+[Click here for the live link](https://journey-calculator.herokuapp.com/)
+----
+
+## __Credits__
+
+### __Content__ 
+
+- Code Institue for the deployment terminal.
