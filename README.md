@@ -1,6 +1,6 @@
-# __Trip Calculator__
+# __Journey Calculator__
 
-Trip Calculator is an application built to allow users calculate the expenses of traveling by car or other ways.
+Journey Calculator is an application built to allow users calculate the expenses of traveling by car or other ways.
 
 Users must insert data such as total travel distance, how much they would spend on tickets, car consumption and gas price. With data the app will return which option is cheaper.
 
@@ -91,7 +91,7 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 
 ### [Heroku live link](https://journey-calculator.herokuapp.com/)
 
-### [GitHub Repository](https://github.com/Vepp1/trip-calculator)
+### [GitHub Repository](https://github.com/Vepp1/journey-calculator)
 ----
 
 ## __Credits__

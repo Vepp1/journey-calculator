@@ -147,7 +147,7 @@ def main():
     final result.
     """
 
-    print('Welcome to Trip Calculator!')
+    print('Welcome to Journey Calculator!')
     print('Calculate your trip expenses and check what transportation suits you better.\n')
     distance = get_distance()
     trip = trip_info()
