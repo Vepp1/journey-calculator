@@ -25,7 +25,7 @@ First the user needs to insert the total traveling distance. After that, they wi
         - Fuel consumption
         - Fuel price 
 
-    ![Input Area](images/input.png)
+![Input Area](images/input.png)
 
 - __Input Validator__
 
@@ -36,7 +36,7 @@ First the user needs to insert the total traveling distance. After that, they wi
 
     - A class was built to execute the final calculation of the app. In this way the application can be easily accessed in future projects. 
 
-    ![Final Result](images/result.png)
+![Final Result](images/result.png)
 
 - __Main Block__
 
@@ -89,8 +89,9 @@ The website was manually tested, in the following way:
 
 This project was deployed using Code Institute's mock terminal for Heroku.
 
-[Heroku live link](https://journey-calculator.herokuapp.com/)
-[GitHub Repository](https://github.com/Vepp1/trip-calculator)
+### [Heroku live link](https://journey-calculator.herokuapp.com/)
+
+### [GitHub Repository](https://github.com/Vepp1/trip-calculator)
 ----
 
 ## __Credits__
