@@ -67,4 +67,4 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 
 ### __Content__ 
 
-- Code Institue for the deployment terminal.
+- Code Institute for the deployment terminal.
