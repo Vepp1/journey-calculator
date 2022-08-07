@@ -74,7 +74,7 @@ A class was built to handle the final calculation that is made on the applicatio
 
 ----
 
-  ## __Testing__
+## __Testing__
 
 The website was manually tested, in the following way:
 - Code passed through a PEP8 linter and confirmed no problems
