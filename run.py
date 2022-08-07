@@ -15,7 +15,7 @@ def get_distance():
 def trip_info():
     """
     Function to determine if its a a round or one way trip.
-    In case it is around, the total distance and prices wil be doubled
+    In case it is around, the total distance and prices will be doubled
     on the main function.
     """
 
@@ -78,24 +78,24 @@ def get_car_mileage():
     """
 
     while True:
-        mileage = input('Please, inform how many km your car drives with 1 liter of gasoline. Normal cars drive aroun 12.5-15 km/l in average. (Ex: 15)\n')
+        mileage = input('Please, inform how many km your car drives with 1 liter of gasoline. Normal cars drive around 12.5-15 km/l in average. (Ex: 15)\n')
 
         if validate_numbers(mileage):
             break
     return float(mileage)
 
-def get_gas_price():
+def get_fuel_price():
     """
     The function get_gas_price, collects the actual gasolines price from
     users input.
     """
 
     while True:
-        gas = input('Insert the actual gasoline price (Ex 2.50):\n')
+        fuel = input('Insert the actual fuel price (Ex 2.50):\n')
 
-        if validate_numbers(gas):
+        if validate_numbers(fuel):
             break
-    return float(gas)
+    return float(fuel)
 
 class TripCalculator():
     """
@@ -103,11 +103,11 @@ class TripCalculator():
     to check with transportation it is cheaper for the user
     """
     
-    def __init__(self, distance, ticket, mileage, gas, trip):
+    def __init__(self, distance, ticket, mileage, fuel, trip):
         self.distance = distance
         self.ticket = ticket
         self.mileage = mileage
-        self.gas = gas
+        self.fuel = fuel
         self.trip = trip
 
     def calculate(self):
@@ -138,7 +138,7 @@ def main():
     trip = trip_info()
     ticket = get_ticket_price()
     mileage = get_car_mileage()
-    gas = get_gas_price()
+    fuel = get_fuel_price()
     result = TripCalculator(distance, ticket, mileage, gas, trip)
     result.calculate()
 
