@@ -5,12 +5,14 @@ def get_distance():
     """
 
     while True:
-        distance = input('Please, enter the trip distance in km here (Ex: 1000):\n')
+        distance = input('Please, enter the trip distance in ' +
+                         'km here (Ex: 1000):\n')
 
         if validate_numbers(distance):
             print('Data is valid!\n')
             break
     return float(distance)
+
 
 def trip_info():
     """
@@ -27,6 +29,7 @@ def trip_info():
             break
     return type
 
+
 def validate_numbers(data):
     """
     Validates the numbers input provided by the user.
@@ -37,10 +40,12 @@ def validate_numbers(data):
         print('Data is valid!\n')
     except:
         if not data:
-            print('Invalid data: A valid number is required, you provided an empty value, please try again.\n') 
+            print('Invalid data: A valid number is required,' +
+                  'you provided an empty value, please try again.\n')
         else:
-            print(f'Invalid data: A valid number is required, you provided: {data}. Please try again.\n')
-        
+            print(f'Invalid data: A valid number is required,' +
+                  'you provided: {data}. Please try again.\n')
+
 
 def validate_letters(data):
     """
@@ -48,14 +53,17 @@ def validate_letters(data):
     """
 
     if not data:
-        print('Invalid data: A Y or N input is required, you provided an empty value, please try again.\n')
+        print('Invalid data: A Y or N input is required,' +
+              'you provided an empty value, please try again.\n')
         return False
     elif data != "Y" and data != "N":
-        print(f'Invalid data: A Y or N input is required, you provided: {data}. Please try again. \n')
+        print(f'Invalid data: A Y or N input is required,' +
+              'you provided: {data}. Please try again. \n')
         return False
     else:
         return True
         print('Data is valid!\n')
+
 
 def get_ticket_price():
     """
@@ -71,6 +79,7 @@ def get_ticket_price():
 
     return float(ticket)
 
+
 def get_car_mileage():
     """
     Collects the data about how many km the car drives
@@ -78,11 +87,13 @@ def get_car_mileage():
     """
 
     while True:
-        mileage = input('Please, inform how many km your car drives with 1 liter of gasoline. Normal cars drive around 12.5-15 km/l in average. (Ex: 15)\n')
+        mileage = input(
+            'Please, inform how many km your car drives with 1 liter of gasoline. Normal cars drive around 12.5-15 km/l in average. (Ex: 15)\n')
 
         if validate_numbers(mileage):
             break
     return float(mileage)
+
 
 def get_fuel_price():
     """
@@ -97,12 +108,13 @@ def get_fuel_price():
             break
     return float(fuel)
 
+
 class TripCalculator():
     """
     Class to gather all data and make the final calculation,
     to check with transportation it is cheaper for the user
     """
-    
+
     def __init__(self, distance, ticket, mileage, fuel, trip):
         self.distance = distance
         self.ticket = ticket
@@ -115,16 +127,19 @@ class TripCalculator():
             self.distance *= 2
             self.ticket *= 2
 
-        car_price = round((self.distance / self.mileage) * self.gas, 2)
+        car_price = round((self.distance / self.mileage) * self.fuel, 2)
 
         if car_price > self.ticket:
             print('A car is not the best option for this trip.\n')
-            print(f'For a {self.distance}km journey, you will expend {car_price} Euro taking a car. While with other transportations, the price is {self.ticket}.\n')
+            print(f'For a {self.distance}km journey, you will expend {car_price} Euro taking a car.' +
+                  'While with other transportations, the price is {self.ticket}.\n')
         elif car_price < self.ticket:
             print('A car is the best option for this trip.\n')
-            print(f'For a {self.distance}km journey, you will expend {car_price} Euro taking a car. While with other transportations, the price is {self.ticket}.')
+            print(f'For a {self.distance}km journey, you will expend {car_price}' +
+                  f'Euro taking a car. While with other transportations, the price is {self.ticket}.')
         else:
             print('With both options the expenses are the same!')
+
 
 def main():
     """
@@ -139,8 +154,9 @@ def main():
     ticket = get_ticket_price()
     mileage = get_car_mileage()
     fuel = get_fuel_price()
-    result = TripCalculator(distance, ticket, mileage, gas, trip)
+    result = TripCalculator(distance, ticket, mileage, fuel, trip)
     result.calculate()
+
 
 if __name__ == "__main__":
     main()
