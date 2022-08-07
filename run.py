@@ -1,5 +1,6 @@
 import sys
 
+
 def get_distance():
     """
     Function to get the total journeys distance. It runs a while loop
@@ -14,14 +15,13 @@ def get_distance():
             break
     return float(distance)
 
-    
-    
 def trip_info():
     """
     Function to determine if its a a round or one way trip.
     In case it is around, the total distance and prices wil be doubled
     on the main function.
     """
+
     while True:
         type = input("Is this a round tripe? (Ex: Y or N):\n").upper()
 
@@ -30,12 +30,11 @@ def trip_info():
             break
     return type
 
-
-
 def validate_numbers(data):
     """
     Validates the numbers input provided by the user.
     """
+
     try:
         data.isnumeric() or float(data)
         return True
@@ -45,11 +44,11 @@ def validate_numbers(data):
         else:
             print(f"Invalid data: A valid number is required, you provided: {data}. Please try again.\n")
 
-
 def validate_letters(data):
     """
     Validates the Y/N inputs provided by the user
     """
+
     if not data:
         print("Invalid data: A Y or N input is required, you provided an empty value, please try again.\n")
         return False
@@ -59,12 +58,12 @@ def validate_letters(data):
     else:
         return True
 
-
 def get_ticket_price():
     """
     This function get the total ticket(s) price from the
     users input.
     """
+
     while True:
         ticket = input("Inform the ticket(s) total price (Ex: 1000):\n")
 
@@ -106,7 +105,8 @@ class TripCalculator():
     """
     Class to gather all data and make the final calculation,
     to check with transportation it is cheaper for the user
-    """  
+    """
+    
     def __init__(self, distance, ticket, mileage, gas):
         self.distance = distance
         self.ticket = ticket
@@ -148,9 +148,3 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
-
-
-
-
-
-
