@@ -4,7 +4,7 @@ Trip Calculator is an application built to allow users calculate the expenses of
 
 Users must insert data such as total travel distance, how much they would spend on tickets, car comsuption and gas price. With data the app will return which option is cheaper.
 
-![Desktop View](assets/images/mockup.jpeg)
+![Desktop View](images/main.png)
 
 ----
 
@@ -16,19 +16,6 @@ First of all the user needs to insert the total traveling distance. After that, 
 
 ### __Existing Features__
 
-- __Game Menu__
-
-    - The section game menu is the one the user arrives when accessing the website. This page contains 2 buttons, one to start playing and another one containing the instructions. 
-
-    ![Navigation Bar](assets/images/game_menu.png)
-
-- __Instructions__
-
-  - The instructions button pops up a modal, that teaches the player how to play the game.
- 
-
-  ![Landing Page](assets/images/instructions.png)
-
 - __Input Area__
 
     - The app collects 5 different inputs from the user:
@@ -38,19 +25,18 @@ First of all the user needs to insert the total traveling distance. After that, 
         - Fuel comsuptiom
         - Fuel price 
 
-    ![Navigation Bar](assets/images/gaming_area.png)
+    ![Input Area](images/input.png)
 
 - __Input Validator__
 
-    - There are validator built within the app that will validate the users input and returns a message in case of a non-accepted input. 
-
-    ![Navigation Bar](assets/images/score.png)
+    - There are validators built within the app that will validate the users input and returns a message in case of a non-accepted input. 
+    
 
 - __TripCalculator Class__
 
     - A class was built to execute the final calculation of the app. In this way the application can be easily accesed in future projects. 
 
-    ![Navigation Bar](assets/images/result.png)
+    ![Final Result](images/result.png)
 
 ----
 
